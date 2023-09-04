@@ -388,24 +388,22 @@ class _LoginPageState extends State<LoginPage> {
             loading = false;
             err = body['message'];
           });
-          print(body['message']);
-          errorSnackBar(context, body['message']);
+
+          errorToast(context, body['message']);
         }
       } else {
         setState(() {
           loading = false; //don't show progress indicator
           err = "Erreur de connexion au serveur.";
         });
-        print("Erreur de connexion au serveur");
-        errorSnackBar(context, "Erreur de connexion au serveur.");
+        errorToast(context, "Erreur de connexion au serveur.");
       }
     } catch (e) {
       setState(() => loading = false);
       if (kDebugMode) {
         print(e);
       }
-      print(e);
-      errorSnackBar(context, "Une erreur s'est produite, veillez réessayer !");
+      errorToast(context, "Une erreur s'est produite, veillez réessayer !");
     }
   }
 

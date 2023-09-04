@@ -451,8 +451,8 @@ class _ComDashboardScreenState extends State<ComDashboardScreen> {
     });
   }
 
-  var totalAbsent;
-  var totalPresent;
+  dynamic totalAbsent;
+  dynamic totalPresent;
   void getStats(date) async {
     try {
       final response = await Network().getData('/get/stats/$date');

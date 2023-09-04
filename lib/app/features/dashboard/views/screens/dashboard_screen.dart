@@ -3,19 +3,15 @@
 import 'dart:developer';
 
 import 'package:Benjamin/app/features/dashboard/models/profile.dart';
-import 'package:Benjamin/app/features/dashboard/views/components/active_project_card.dart';
 import 'package:Benjamin/app/features/dashboard/views/components/header.dart';
 import 'package:Benjamin/app/features/dashboard/views/components/profile_tile.dart';
 import 'package:Benjamin/app/features/dashboard/views/components/recent_messages.dart';
 import 'package:Benjamin/app/features/dashboard/views/components/sidebar.dart';
 import 'package:Benjamin/app/features/dashboard/views/components/team_member.dart';
-import 'package:Benjamin/app/features/dashboard/views/screens/programmes_screen.dart';
 import 'package:Benjamin/app/features/network_utils/api.dart';
 import 'package:Benjamin/app/shared_components/mycard/anniv_card.dart';
 import 'package:Benjamin/app/shared_components/mycard/present_absence_card.dart';
-import 'package:Benjamin/app/shared_components/programme_card.dart';
 import 'package:Benjamin/app/shared_components/stats/stats_card.dart';
-import 'package:Benjamin/model/programme_model.dart';
 
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -33,7 +29,6 @@ import 'dart:convert';
 
 import 'package:Benjamin/model/memberModel/member_model.dart';
 
-import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -532,7 +527,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
       return data;
     } catch (e) {
-      print(e);
       return [];
     }
   }

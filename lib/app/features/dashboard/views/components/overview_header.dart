@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'package:Benjamin/app/constans/app_constants.dart';
 import 'package:Benjamin/app/utils/helpers/app_helpers.dart';
 import 'package:flutter/material.dart';
@@ -109,17 +111,18 @@ class _OverviewHeader extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: ElevatedButton(
         onPressed: onPressed,
-        child: Text(
-          label,
-        ),
         style: ElevatedButton.styleFrom(
-          primary: selected
+          foregroundColor:
+              selected ? kFontColorPallets[0] : kFontColorPallets[2],
+          backgroundColor: selected
               ? Theme.of(Get.context!).cardColor
               : Theme.of(Get.context!).canvasColor,
-          onPrimary: selected ? kFontColorPallets[0] : kFontColorPallets[2],
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
+        ),
+        child: Text(
+          label,
         ),
       ),
     );

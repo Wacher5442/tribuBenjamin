@@ -220,7 +220,6 @@ class _InfoMemberScreenState extends State<InfoMemberScreen> {
 
       return data;
     } catch (e) {
-      print(e);
       return [];
     }
   }
@@ -407,10 +406,11 @@ class _InfoMemberScreenState extends State<InfoMemberScreen> {
                     CircleAvatar(
                         radius: 50,
                         backgroundColor: Colors.grey.shade200,
-                        child: const CircleAvatar(
+                        child: CircleAvatar(
                           radius: 45,
-                          backgroundImage:
-                              AssetImage('assets/images/profile/yeo.png'),
+                          backgroundImage: data.sex == "H"
+                              ? const AssetImage(ImageRasterPath.avatar4)
+                              : const AssetImage(ImageRasterPath.avatar7),
                         )),
                     const SizedBox(
                       height: 10,
@@ -560,11 +560,13 @@ class _InfoMemberScreenState extends State<InfoMemberScreen> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         CircularPercentIndicator(
-          radius: 55,
+          radius: 50,
           lineWidth: 2.0,
           percent: 0.8,
-          center: const CircleAvatar(
-            backgroundImage: AssetImage("assets/images/profile/yeo.png"),
+          center: CircleAvatar(
+            backgroundImage: mem.sex == "H"
+                ? const AssetImage(ImageRasterPath.avatar4)
+                : const AssetImage(ImageRasterPath.avatar7),
             radius: 150,
             backgroundColor: Colors.white,
           ),

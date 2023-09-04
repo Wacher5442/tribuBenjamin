@@ -14,7 +14,6 @@ import 'package:Benjamin/app/features/dashboard/views/screens/visite/visite_scre
 import 'package:Benjamin/app/features/network_utils/api.dart';
 import 'package:Benjamin/app/shared_components/project_card.dart';
 import 'package:Benjamin/app/shared_components/selection_button.dart';
-import 'package:Benjamin/app/shared_components/upgrade_premium_card.dart';
 import 'package:Benjamin/loginPage.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
@@ -236,10 +235,10 @@ class _SidebarState extends State<Sidebar> {
                 style: TextStyle(color: Colors.red),
               ),
             ),
-            UpgradePremiumCard(
+            /* UpgradePremiumCard(
               backgroundColor: Theme.of(context).canvasColor.withOpacity(.4),
               onPressed: () {},
-            ),
+            ),*/
             const SizedBox(height: kSpacing),
           ],
         ),
